@@ -1,4 +1,4 @@
-app.controller('publicListController', function ($scope, crestService) {
+app.controller('publicListController', function ($scope, $log, crestService) {
     // console.log($route.current.params.url);
 
     crestService.getData(null)
@@ -21,25 +21,31 @@ app.controller('publicListController', function ($scope, crestService) {
         }
     };
 
-    $scope.goAuth = function(){
+});
+
+app.controller('regionsController', function ($scope, $http) {
+
+    $http.get("/data/regions.json")
+        .success(function (data) {
+            $scope.data = data.items;
+        });
+
+});
+
+app.controller('navController', function ($scope,$log,crestService) {
+
+    $scope.goAuth = function () {
+        // $log.debug(11);
+        // $log.debug();
         crestService.redirectSSO();
     };
-
 });
 
-app.controller('regionsController', function ($scope,$http) {
-
-    $http.get("/data/regions.json").success(function(data){
-        $scope.data = data.items;
-    });
-
-});
-
-app.controller('authController', function ($scope,$http,$routeParams,$log) {
+app.controller('authController', function ($scope, $http, $routeParams, $log) {
 
     var code = $routeParams.code;
     $log.log(code);
 
-    localStorage.setItem("code",code);
+    localStorage.setItem("code", code);
 
 });
