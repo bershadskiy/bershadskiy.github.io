@@ -14,7 +14,7 @@ app.factory('crestService', function ($http, $location, $window) {
             });
         },
         redirectSSO: function () {
-            $window.location = sOauthUrl;
+            $window.location = oauthUrl;
         }
     }
 });
