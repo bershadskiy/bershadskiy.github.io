@@ -25,7 +25,7 @@ app.config(['$routeProvider', function ($routeProvider) {
             controller: 'authController',
             template: ''
         }).when("/about", {
-            template: 'All EVE graphics and data used are property of <a href="http://www.ccpgames.com/">CCP.</a>'
+            templateUrl: 'templates/about.html'
         })
         .otherwise({
             redirectTo: "/"
