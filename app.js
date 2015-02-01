@@ -71,7 +71,7 @@ app.controller('authController', function ($scope,$http,$routeParams,$log) {
 });
 
 app.factory('crestService', function ($http) {
-    var rootUrl = "http://public-crest-sisi.testeveonline.com/";
+    var rootUrl = "https://public-crest-sisi.testeveonline.com/";
 
     return {
         getData: function (tUrl) {
