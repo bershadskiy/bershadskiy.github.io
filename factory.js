@@ -1,7 +1,7 @@
 app.factory('crestService', function ($http, $location, $window) {
     var rootUrl = "https://api-sisi.testeveonline.com/";
-    var oauthUrl = "https://sisilogin.testeveonline.com/oauth/authorize/?response_type=code&redirect_uri=" + encodeURIComponent('http://bershadskiy.github.io/#/auth') + "&client_id=bef0bb70a1d0430981755636671fcb93&scope=publicData,characterContactsRead&state=getcode";
-    var sOauthUrl = "https://sisilogin.testeveonline.com/oauth/token/?response_type=code&redirect_uri=" + encodeURIComponent('http://bershadskiy.github.io/#/auth') + "&client_id=bef0bb70a1d0430981755636671fcb93&scope=publicData,characterContactsRead&state=getcode";
+    var oauthUrl = "https://sisilogin.testeveonline.com/oauth/authorize/?response_type=code&redirect_uri=" + encodeURIComponent('http://bershadskiy.github.io/#/auth') + "&client_id=bef0bb70a1d0430981755636671fcb93&scope=publicData&state=getcode";
+    var sOauthUrl = "https://sisilogin.testeveonline.com/oauth/token/?response_type=code&redirect_uri=" + encodeURIComponent('http://bershadskiy.github.io/#/auth') + "&client_id=bef0bb70a1d0430981755636671fcb93&scope=publicData&state=getcode";
 
     return {
         getData: function (tUrl) {
